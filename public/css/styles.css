@@ -1,0 +1,42 @@
+/* Hilary's styles */
+/* Notes: add a carousel of example personas */
+/* Also put a little logo photo in the jumbotron */
+body {
+	background-color: #F0F2F0;
+	font-family: 'Droid Serif', serif;
+}
+.navbar-default {
+	background-color: #F0F2F0; 
+	border-color: #455159;
+}
+.navbar-brand {
+	font-weight: bold;
+}
+.container .jumbotron {
+	padding: 10px 20px;
+	background-color: #BFBFBA;
+	border-radius: 2px;
+}
+.jumbotron p {
+	margin: 25px;
+	font-size: 1.4em;
+}
+.jumbotron h1 {
+	margin-top: 5%;
+	font-size: 4em;
+}
+p#newaccount {
+	font-style: italic;
+	font-size: 1.2em;
+	color: gray;
+}
+img#jumbotronlogo {
+	float: left;
+	max-width: 15%;
+	border: 2px solid white;
+	padding: 10px;
+	margin: 20px;
+}
+p.clearfix {
+	clear: both;
+}
