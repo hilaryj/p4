@@ -13,6 +13,7 @@
         </div>
         <div class="col-md-6">
             Left-content
+            <a href="/debug">Debug link</a>
         </div>
         <div class="col-md-4">
             Right-content
