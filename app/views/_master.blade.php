@@ -20,23 +20,6 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Persona Generator</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/create">Create Random Personas</a></li>
-            <li><a href="/generate">Make Custom Personas</a></li>            
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a class="btn btn-md btn-default" href="#button" role="button">Sign in!</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       @yield('content')
     </div> <!-- /container -->

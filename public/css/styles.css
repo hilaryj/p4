@@ -1,6 +1,8 @@
 /* Hilary's styles */
-/* Notes: add a carousel of example personas */
-/* Also put a little logo photo in the jumbotron */
+* {
+    border: 1px solid red;
+}
+
 body {
 	background-color: #F0F2F0;
 	font-family: 'Droid Serif', serif;
