@@ -9,6 +9,59 @@ Route::post('/', function() {
 
 });
 
+Route::get('/practice-creating', function() {
+
+    # Instantiate a new Item model class
+    $item = new Item();
+
+    $item->item_name = 'Napkins';
+    $item->item_brand = 'not sure';
+    $item->quantity = 2;
+    $item->requestor = 'Hilary';
+
+    $item->save();
+
+    return 'You have added an item to the list.';
+
+});
+
+Route::get('/practice-reading', function() {
+
+    $items = Item::all();
+
+    foreach($items as $item) {
+        echo $item->requestor.'<br>';
+    }
+
+});
+
+Route::get('/practice-updating', function() {
+
+    # Find all items requested by Hilary
+    $item = Item::where('requestor', 'LIKE', '%Hilary%')->all();
+
+    # Mispell her name
+    $item->requestor = 'Hillary';
+
+    # Save the changes
+    $item->save();
+
+    return "Update complete; check the database to see if your update worked...";
+
+});
+
+Route::get('/practice-deleting', function() {
+
+    # First get an item to delete
+    $item = Item::where('requestor', 'LIKE', '%Hillary%')->first();
+
+    # Goodbye!
+    $item->delete();
+
+    return "Deletion complete; check the database to see if it worked...";
+
+});
+
 Route::get('/debug', function() {
 
     echo '<pre>';
@@ -51,22 +104,6 @@ Route::get('/debug', function() {
     }
 
     echo '</pre>';
-
-});
-
-
-Route::get('/practice', function() {
-
-    $fruit = Array('Apples', 'Oranges', 'Pears');
-
-    echo Pre::render($fruit,'Fruit');
-
-});
-
-
-Route::get('/get-environment',function() {
-
-    echo "Environment: ".App::environment();
 
 });
 

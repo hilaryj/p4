@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShoppingsTable extends Migration {
+class CreateItemsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateShoppingsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('shoppings', function($table) {
+		Schema::create('items', function($table) {
 
         # Increments method will make a Primary, Auto-Incrementing field.
         # Most tables start off this way
@@ -38,7 +38,7 @@ class CreateShoppingsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('books');
+		Schema::drop('items');
 	}
 
 }
