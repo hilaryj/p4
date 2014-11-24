@@ -1,44 +1,24 @@
 /* Hilary's styles */
-* {
-    border: 1px solid red;
-}
-
 body {
-	background-color: #F0F2F0;
+	background-color: black;
 	font-family: 'Droid Serif', serif;
+    color: white;
 }
-.navbar-default {
-	background-color: #F0F2F0; 
-	border-color: #455159;
+h1 {
+    text-align: center;
+    
 }
-.navbar-brand {
-	font-weight: bold;
+.form {
+    border: 1px solid blue;
+    background-color: #FFF;
+    width: 70%;
+    height: 200px;
+    margin-top: 20px;
 }
-.container .jumbotron {
-	padding: 10px 20px;
-	background-color: #BFBFBA;
-	border-radius: 2px;
-}
-.jumbotron p {
-	margin: 25px;
-	font-size: 1.4em;
-}
-.jumbotron h1 {
-	margin-top: 5%;
-	font-size: 4em;
-}
-p#newaccount {
-	font-style: italic;
-	font-size: 1.2em;
-	color: gray;
-}
-img#jumbotronlogo {
-	float: left;
-	max-width: 15%;
-	border: 2px solid white;
-	padding: 10px;
-	margin: 20px;
-}
-p.clearfix {
-	clear: both;
+.listarea {
+    border: 1px solid brown;
+    background-color: #F2E8B3;
+    width: 90%;
+    height: 200px;
+    margin-top: 20px;
 }

@@ -20,8 +20,28 @@
   </head>
 
   <body>
-    <div class="container">
-      @yield('content')
-    </div> <!-- /container -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1">
+            <!-- placeholder column -->
+        </div>
+        <div class="col-md-6">
+            <!-- form -->
+            <div class="form">
+                @yield('form')
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- shopping list display area -->
+            <div class="listarea">
+                @yield('display')
+            </div>      
+        </div>
+        <div class="col-md-1">
+            <!-- placeholder column -->
+        </div>
+      </div>
+    </div>
+     
   </body>
 </html>

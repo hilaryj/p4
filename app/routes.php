@@ -11,15 +11,22 @@ Route::post('/', function() {
 
 Route::get('/practice-creating', function() {
 
+    # Creating a tag
+    $tag = new Tag;
+    $tag->urgent = 0;
+    $tag->save();
+    
     # Instantiate a new Item model class
     $item = new Item();
 
-    $item->item_name = 'Napkins';
-    $item->item_brand = 'not sure';
+    $item->item_name = 'Paper Towels';
+    $item->item_brand = 'Marcal';
     $item->quantity = 2;
-    $item->requestor = 'Hilary';
-
-    $item->save();
+    $item->requestor = 'Hillary';
+    
+    $item->save(); # Save first
+    
+    $item->tags()->attach($tag); 
 
     return 'You have added an item to the list.';
 
