@@ -11,6 +11,7 @@
     {{ HTML::style('css/bootstrap.css') }}
     {{ HTML::style('css/bootstrap-theme.css') }}
     {{ HTML::style('css/styles.css') }}
+    {{ HTML::style('css/paper.css') }}
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -20,28 +21,13 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-1">
-            <!-- placeholder column -->
-        </div>
-        <div class="col-md-6">
-            <!-- form -->
-            <div class="form">
-                @yield('form')
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a href="{{ action('ItemController@index') }}" class="navbar-brand">Item  Collection</a>
             </div>
-        </div>
-        <div class="col-md-4">
-            <!-- shopping list display area -->
-            <div class="listarea">
-                @yield('display')
-            </div>      
-        </div>
-        <div class="col-md-1">
-            <!-- placeholder column -->
-        </div>
-      </div>
+        </nav>
+        @yield('content')
     </div>
-     
-  </body>
+</body>
 </html>

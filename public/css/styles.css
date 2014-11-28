@@ -14,11 +14,11 @@ h1 {
     width: 70%;
     height: 200px;
     margin-top: 20px;
+    color: #000;
 }
+
 .listarea {
     border: 1px solid brown;
     background-color: #F2E8B3;
-    width: 90%;
-    height: 200px;
     margin-top: 20px;
 }

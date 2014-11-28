@@ -1,35 +1,43 @@
 <?php
 
+// Bind route parameters.
+Route::model('item', 'Item');
+
+// Show pages.
+Route::get('/', 'ItemController@index');
+Route::get('/create', 'ItemController@create');
+Route::get('/edit/{item}', 'ItemController@edit');
+Route::get('/delete/{item}', 'ItemController@delete');
+
+// Handle form submissions.
+Route::post('/create', 'ItemController@handleCreate');
+Route::post('/edit', 'ItemController@handleEdit');
+Route::post('/delete', 'ItemController@handleDelete');
+
+
 # Homepage; shopping list main page
-Route::get('/', function()
+/* Route::get('/', function()
 {
 	return View::make('index'); # index.blade.php
 });
 Route::post('/', function() {
-
-});
-
-Route::get('/practice-creating', function() {
-
-    # Creating a tag
-    $tag = new Tag;
-    $tag->urgent = 0;
-    $tag->save();
     
-    # Instantiate a new Item model class
     $item = new Item();
-
-    $item->item_name = 'Paper Towels';
-    $item->item_brand = 'Marcal';
-    $item->quantity = 2;
-    $item->requestor = 'Hillary';
     
-    $item->save(); # Save first
+    $item->item_name = Input::Get('item_name');
+    $item->item_brand = Input::Get('item_brand');
+    $item->quantity = Input::Get('quantity');
+    $item->requestor = Input::Get('requestor');
     
-    $item->tags()->attach($tag); 
+    $item->save();
 
-    return 'You have added an item to the list.';
+    $tag = new Tag;
+    $tag->urgent = Input::Get('urgent');
+    $tag->save(); 
 
+    $item->tags()->attach($tag);
+    
+    return 'You have added an item to the list';
 });
 
 Route::get('/practice-reading', function() {
@@ -40,7 +48,7 @@ Route::get('/practice-reading', function() {
         echo $item->requestor.'<br>';
     }
 
-});
+}); */
 
 Route::get('/practice-updating', function() {
 
