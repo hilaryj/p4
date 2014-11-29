@@ -15,41 +15,6 @@ Route::post('/edit', 'ItemController@handleEdit');
 Route::post('/delete', 'ItemController@handleDelete');
 
 
-# Homepage; shopping list main page
-/* Route::get('/', function()
-{
-	return View::make('index'); # index.blade.php
-});
-Route::post('/', function() {
-    
-    $item = new Item();
-    
-    $item->item_name = Input::Get('item_name');
-    $item->item_brand = Input::Get('item_brand');
-    $item->quantity = Input::Get('quantity');
-    $item->requestor = Input::Get('requestor');
-    
-    $item->save();
-
-    $tag = new Tag;
-    $tag->urgent = Input::Get('urgent');
-    $tag->save(); 
-
-    $item->tags()->attach($tag);
-    
-    return 'You have added an item to the list';
-});
-
-Route::get('/practice-reading', function() {
-
-    $items = Item::all();
-
-    foreach($items as $item) {
-        echo $item->requestor.'<br>';
-    }
-
-}); */
-
 Route::get('/practice-updating', function() {
 
     # Find all items requested by Hilary

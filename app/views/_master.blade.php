@@ -24,7 +24,7 @@
     <div class="container">
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a href="{{ action('ItemController@index') }}" class="navbar-brand">Item  Collection</a>
+                <a href="{{ action('ItemController@index') }}" class="navbar-brand">Shopping List</a>
             </div>
         </nav>
         @yield('content')
