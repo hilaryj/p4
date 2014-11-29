@@ -25,7 +25,6 @@
                         <th>Brand</th>
                         <th>Quantity</th>
                         <th>Requested By</th>
-                        <th>Urgent?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +34,6 @@
                         <td>{{ $item->item_brand }}</td>
                         <td>{{ $item->quantity }}</td>
                         <td>{{ $item->requestor }}</td>
-                        <td>{{ $item->tags()->id }}</td>
                         <td>
                         <a href="{{ action('ItemController@edit', $item->id) }}" class="btn btn-default">Edit</a>
                         <a href="{{ action('ItemController@delete', $item->id) }}" class="btn btn-danger">Delete</a>

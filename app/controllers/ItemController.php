@@ -7,7 +7,7 @@ class ItemController extends BaseController
     public function index()
     {
         // List all items
-        $items = Item::with('tag')->get();
+        $items = Item::all();
         return View::make('index', compact('items'));
     }
 
@@ -55,25 +55,22 @@ class ItemController extends BaseController
         $item->requestor     = Input::get('requestor');
         
         
-        $item->urgent        = Input::has('urgent');
+        //$item->urgent        = Input::has('urgent');
         $item->save();
 
         return Redirect::action('ItemController@index');
     }
 
-    public function delete()
+    public function delete(Item $item)
     {
         // Show delete confirmation page.
-        return View::make('delete');
+        return View::make('delete', compact('item'));
     }
 
     public function handleDelete()
     {
-        // Handle the delete confirmation.
-        $id = Input::get('item');
-        $item = Item::findOrFail($id);
+        $item = Item::all();
         $item->delete();
-
-    return Redirect::action('ItemController@index');
+        return Redirect::action('ItemController@index');
     }
 }
