@@ -63,14 +63,20 @@ class ItemController extends BaseController
 
     public function delete(Item $item)
     {
-        // Show delete confirmation page.
-        return View::make('delete', compact('item'));
-    }
-
-    public function handleDelete()
-    {
-        $item = Item::all();
         $item->delete();
         return Redirect::action('ItemController@index');
+        // Show delete confirmation page.
+        
+        //return View::make('delete', compact('item'));
+        
+    }
+
+    public function handleDelete($item)
+    {
+        //echo get_class($item);
+        //$item = Item::find('id');
+        //$item->delete();
+        //Notification::success('The item was deleted!');
+        //return Redirect::action('ItemController@index');
     }
 }

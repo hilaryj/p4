@@ -2,17 +2,21 @@
 
 // Bind route parameters.
 Route::model('item', 'Item');
+Route::bind('item', function($value, $route) {
+    return Item::where('id', $value)->first();
+});
 
 // Show pages.
 Route::get('/', 'ItemController@index');
 Route::get('/create', 'ItemController@create');
 Route::get('/edit/{item}', 'ItemController@edit');
-Route::get('/delete/{item}', 'ItemController@delete');
+//Route::get('/delete/{item}', 'ItemController@delete');
+Route::get('/delete/{item}', array('as' => 'delete', 'uses' => 'ItemController@delete'));
 
 // Handle form submissions.
 Route::post('/create', 'ItemController@handleCreate');
 Route::post('/edit', 'ItemController@handleEdit');
-Route::post('/delete', 'ItemController@handleDelete');
+//Route::post('/delete', 'ItemController@handleDelete');
 
 
 Route::get('/practice-updating', function() {

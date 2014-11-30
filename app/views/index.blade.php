@@ -25,6 +25,7 @@
                         <th>Brand</th>
                         <th>Quantity</th>
                         <th>Requested By</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +37,8 @@
                         <td>{{ $item->requestor }}</td>
                         <td>
                         <a href="{{ action('ItemController@edit', $item->id) }}" class="btn btn-default">Edit</a>
-                        <a href="{{ action('ItemController@delete', $item->id) }}" class="btn btn-danger">Delete</a>
+                        <small>(<a href="{{ URL::route('delete', $item->id) }}">Delete</a>)</small>
+                        <!-- <a href="{{ action('ItemController@delete', $item->id) }}" class="btn btn-danger">Delete</a> -->
                         </td>
                     </tr>
                     @endforeach
