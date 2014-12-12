@@ -24,6 +24,13 @@
             <label for="requestor">Requested by</label>
             <input type="text" class="form-control" name="requestor" value="{{ $item->requestor }}" />
         </div>
+        
+        <div class="checkbox">
+            <label for="urgent">
+                <input type="checkbox" name="urgent" /> Urgent?
+            </label>
+        </div>
+        
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('ItemController@index') }}" class="btn btn-link">Cancel</a>
     </form>

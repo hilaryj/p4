@@ -19,6 +19,20 @@ class ItemController extends BaseController
 
     public function handleCreate()
     {
+        // Validate
+        $validator = Validator::make(Input::all(), array(
+            'item_name' => 'required',
+            'quantity' => 'numeric|between:1,15',
+            'requestor' => 'required'
+        ));
+        
+        if($validator->fails()) {
+            return Redirect::to('/create')
+                ->with('flash_message', 'Add Item failed, please try again.')
+                ->withInput()
+                ->withErrors($validator);
+        };
+        
         // Handle add item submission
         $item = new Item; // () ?
         $item->item_name    = Input::get('item_name');
@@ -53,9 +67,11 @@ class ItemController extends BaseController
         $item->item_brand    = Input::get('item_brand');
         $item->quantity      = Input::get('quantity');
         $item->requestor     = Input::get('requestor');
-        
-        
-        //$item->urgent        = Input::has('urgent');
+        //$item->save();
+        $tag = new Tag;
+        $tag->urgent         = Input::has('urgent');
+        $tag->save();
+        $item->tags()->attach($tag);
         $item->save();
 
         return Redirect::action('ItemController@index');

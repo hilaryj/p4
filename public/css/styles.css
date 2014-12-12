@@ -22,3 +22,7 @@ h1 {
     background-color: #F2E8B3;
     margin-top: 20px;
 }
+
+p#errortext {
+    color: red;
+}

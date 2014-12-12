@@ -4,7 +4,7 @@
 Route::model('item', 'Item');
 Route::bind('item', function($value, $route) {
     return Item::where('id', $value)->first();
-});
+}); // from Youtube tutorial; add to README.md!!
 
 // Show pages.
 Route::get('/', 'ItemController@index');

@@ -5,6 +5,9 @@
         <h1>Create Item</h1>
     </div>
 
+        @foreach($errors->all() as $message) 
+        <p id='errortext'>{{ $message }}</p>
+        @endforeach
     <form action="{{ action('ItemController@handleCreate') }}" method="post" role="form">
         <div class="form-group">
             <label for="item_name">Item Name</label>
