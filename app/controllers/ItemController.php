@@ -34,7 +34,7 @@ class ItemController extends BaseController
         };
         
         // Handle add item submission
-        $item = new Item; // () ?
+        $item = new Item;
         $item->item_name    = Input::get('item_name');
         $item->item_brand   = Input::get('item_brand');
         $item->quantity     = Input::get('quantity');
@@ -43,12 +43,11 @@ class ItemController extends BaseController
         $item->save();
         
         $tag = new Tag;
-        $tag->urgent        = Input::has('urgent'); // Has vs get
+        $tag->urgent        = Input::has('urgent'); 
         $tag->save();
         
         $item->tags()->attach($tag);
         
-
         return Redirect::action('ItemController@index');
     
     }
@@ -67,7 +66,7 @@ class ItemController extends BaseController
         $item->item_brand    = Input::get('item_brand');
         $item->quantity      = Input::get('quantity');
         $item->requestor     = Input::get('requestor');
-        //$item->save();
+        
         $tag = new Tag;
         $tag->urgent         = Input::has('urgent');
         $tag->save();
@@ -81,9 +80,6 @@ class ItemController extends BaseController
     {
         $item->delete();
         return Redirect::action('ItemController@index');
-        // Show delete confirmation page.
-        
-        //return View::make('delete', compact('item'));
         
     }
 

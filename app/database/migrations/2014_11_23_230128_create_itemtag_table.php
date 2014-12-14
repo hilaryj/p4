@@ -12,15 +12,13 @@ class CreateItemTagTable extends Migration {
 	public function up() 
 	{
 		Schema::create('item_tag', function($table) {
-			# AI, PK
-			# none needed
-			# General data...
-			$table->integer('item_id')->unsigned();
+
+			$table->integer('item_id')- >unsigned();
 			$table->integer('tag_id')->unsigned();
 			
 			# Define foreign keys...
-			$table->foreign('item_id')->references('id')->on('items');
-			$table->foreign('tag_id')->references('id')->on('tags');
+			$table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+			$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 			
 		});
 	}
