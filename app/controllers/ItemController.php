@@ -67,10 +67,15 @@ class ItemController extends BaseController
         $item->quantity      = Input::get('quantity');
         $item->requestor     = Input::get('requestor');
         
+        // Detach the current urgency
+        $item->tags()->detach('id');
         $tag = new Tag;
+        
         $tag->urgent         = Input::has('urgent');
         $tag->save();
+        
         $item->tags()->attach($tag);
+        
         $item->save();
 
         return Redirect::action('ItemController@index');
