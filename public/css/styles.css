@@ -1,6 +1,6 @@
 /* Hilary's styles */
 body {
-	background-color: #BCB4AA;
+	background-color: #348899;
 	font-family: 'Droid Serif', serif;
     color: white;
 }
@@ -17,12 +17,16 @@ h1 {
     color: #000;
 }
 
-.listarea {
-    border: 1px solid brown;
-    background-color: #F2E8B3;
-    margin-top: 20px;
+.formarea {
+    border: 2px solid #343642;
+    background-color: #FFF;
+    padding: 20px;
+    color: #343642;
 }
 
-p#errortext {
-    color: red;
+.requesttable {
+    border: 2px solid #343642;
+    background: #FFF;
+    color: #343642;
+    margin: 10px;
 }

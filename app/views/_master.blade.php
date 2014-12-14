@@ -23,17 +23,17 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
-                        <a href="{{ action('ItemController@index') }}" class="navbar-brand">Shopping List</a>
+                        <a href="{{ action('ItemController@index') }}" class="navbar-brand">Shopping List - Home</a>
                     </div>
                 </nav>
                 @yield('content')
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 </body>
