@@ -52,7 +52,7 @@ class ItemController extends BaseController
     
     }
 
-    public function edit(Item $item)
+    public function edit($item)
     {
         // Show the edit item form
         return View::make('edit', compact('item'));
@@ -61,17 +61,17 @@ class ItemController extends BaseController
     public function handleEdit()
     {
         // Handle edit item submission
-        $item = Item::findOrFail(Input::get('id'));
+        $item = Item::with('tags')->findOrFail(Input::get('id'));
         $item->item_name     = Input::get('item_name');
         $item->item_brand    = Input::get('item_brand');
         $item->quantity      = Input::get('quantity');
         $item->requestor     = Input::get('requestor');
         
         // Detach the current urgency
-        $item->tags()->detach('id');
+        //$item->tags()->detach('id');
         $tag = new Tag;
         
-        $tag->urgent         = Input::has('urgent');
+        $tag->urgent         = Input::get('urgent');
         $tag->save();
         
         $item->tags()->attach($tag);
@@ -81,7 +81,7 @@ class ItemController extends BaseController
         return Redirect::action('ItemController@index');
     }
 
-    public function delete(Item $item)
+    public function delete($item)
     {
         $item->delete();
         return Redirect::action('ItemController@index');
