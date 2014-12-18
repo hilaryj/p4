@@ -7,10 +7,10 @@
 Shopping list app using Laravel, incorporating 2 tables and demonstrating all 4 CRUD interactions.
 
 ## Demo
-Link to be posted by December 18 5:30 PM.
+<http://www.screencast.com/t/5ScdkN7eKQZ>
 
 ## Details for teaching team
-* As of now, the "urgent" function is still wacky. Hopefully can fix it.
+* Was not able to fix the weirdness with the edit/urgent functionality.
 
 ## Outside code
 * Bootstrap (http://getbootstrap.com/)
